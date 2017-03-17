@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11201" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <dependencies>
+        <deployment version="2048" identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="chatReceive" rowHeight="52" id="WM6-3t-45z" customClass="ChatTableViewCell">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="51"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="WM6-3t-45z" id="6P0-gg-dvB">
+                <frame key="frameInset" width="320" height="50"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NwD-b1-ghq" userLabel="Main">
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="chatRecivedMessageLabel" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PHq-fK-yHB">
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" red="0.94117647058823528" green="0.94117647058823528" blue="0.94117647058823528" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="PHq-fK-yHB" firstAttribute="top" secondItem="NwD-b1-ghq" secondAttribute="top" constant="8" id="5he-o9-tO0"/>
+                            <constraint firstItem="PHq-fK-yHB" firstAttribute="leading" secondItem="NwD-b1-ghq" secondAttribute="leading" constant="16" id="Cm5-Zh-YS7"/>
+                            <constraint firstAttribute="trailing" secondItem="PHq-fK-yHB" secondAttribute="trailing" constant="15.5" id="nKX-AP-hkg"/>
+                            <constraint firstAttribute="bottom" secondItem="PHq-fK-yHB" secondAttribute="bottom" constant="8" id="s6H-bc-IQs"/>
+                        </constraints>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                <integer key="value" value="8"/>
+                            </userDefinedRuntimeAttribute>
+                        </userDefinedRuntimeAttributes>
+                    </view>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qNB-ZT-uND">
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="empty_photo.png" translatesAutoresizingMaskIntoConstraints="NO" id="uid-6y-sRR" customClass="AsyncImageView">
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="25" id="Uu0-Dn-vbg"/>
+                                    <constraint firstAttribute="height" constant="25" id="jbf-f3-xdb"/>
+                                </constraints>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="25" id="4JH-dc-kts"/>
+                            <constraint firstAttribute="width" constant="25" id="4MF-Xj-evi"/>
+                            <constraint firstItem="uid-6y-sRR" firstAttribute="leading" secondItem="qNB-ZT-uND" secondAttribute="leading" id="6Pz-J5-59a"/>
+                            <constraint firstItem="uid-6y-sRR" firstAttribute="top" secondItem="qNB-ZT-uND" secondAttribute="top" id="XKR-gW-aQW"/>
+                        </constraints>
+                    </view>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="qNB-ZT-uND" firstAttribute="leading" secondItem="6P0-gg-dvB" secondAttribute="leadingMargin" id="1j3-qT-Zgn"/>
+                    <constraint firstItem="NwD-b1-ghq" firstAttribute="leading" secondItem="qNB-ZT-uND" secondAttribute="trailing" constant="8" id="4V7-6C-YuM"/>
+                    <constraint firstItem="qNB-ZT-uND" firstAttribute="top" secondItem="6P0-gg-dvB" secondAttribute="topMargin" constant="5" id="KpC-Yg-fKw"/>
+                    <constraint firstItem="NwD-b1-ghq" firstAttribute="top" secondItem="6P0-gg-dvB" secondAttribute="topMargin" id="YA6-ez-ggK"/>
+                    <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="NwD-b1-ghq" secondAttribute="trailing" constant="85" id="k3d-SK-1tK"/>
+                    <constraint firstItem="NwD-b1-ghq" firstAttribute="bottom" secondItem="6P0-gg-dvB" secondAttribute="bottomMargin" id="uxZ-hE-Icm"/>
+                </constraints>
+            </tableViewCellContentView>
+            <connections>
+                <outlet property="bubbleView" destination="NwD-b1-ghq" id="V9i-WP-ceL"/>
+                <outlet property="chatMessageLabel" destination="PHq-fK-yHB" id="DPv-YT-OLh"/>
+                <outlet property="photoContainer" destination="qNB-ZT-uND" id="caG-5M-DnX"/>
+                <outlet property="photoImage" destination="uid-6y-sRR" id="OZL-9w-Dvm"/>
+            </connections>
+            <point key="canvasLocation" x="83" y="349.5"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="empty_photo.png" width="80" height="80"/>
+    </resources>
+</document>
